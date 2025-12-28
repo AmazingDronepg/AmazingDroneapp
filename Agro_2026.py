@@ -5,7 +5,7 @@ import os
 from datetime import datetime, timedelta
 
 # --- CONFIGURAÇÃO DE CAMINHO DA LOGO ---
-caminho_logo = os.path.join(os.path.expanduser("~"), "Desktop", "logo_AmazingDrone.png")
+caminho_logo = "logo_AmazingDrone.png"
 
 # Configuração da Página
 st.set_page_config(page_title="AmazingDrone Smart Analytics", layout="wide")
@@ -192,4 +192,5 @@ if st.button("📄 Gerar Proposta Comercial PDF"):
     pdf_bytes = generate_impact_pdf(pdf_params)
     b64 = base64.b64encode(pdf_bytes).decode()
     href = f'<a href="data:application/octet-stream;base64,{b64}" download="Proposta_AmazingDrone_{nome_cliente}.pdf" style="text-decoration:none;"><button style="background-color:#2e7d32; color:white; padding:15px 35px; border:none; border-radius:8px; cursor:pointer; font-size:16px;">📥 BAIXAR PROPOSTA COM ACENTUAÇÃO</button></a>'
+
     st.markdown(href, unsafe_allow_html=True)
